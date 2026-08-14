@@ -88,6 +88,8 @@ def train(
     """
     Treina o modelo a partir dos dados PEDE 2024, registra no MLflow e salva em save_path.
     """
+    mlflow.autolog()
+
     df = preparar_dados()
     df = criar_atributos_derivados(df)
     logger.info("Treino: %s linhas carregadas.", len(df))
